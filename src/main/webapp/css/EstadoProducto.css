@@ -1,0 +1,16 @@
+.tabla-productos{
+    padding: 10px;
+}
+
+.productos-tabla{
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.productos-tabla img{
+    max-width: 8vw;
+}
+
+.productos_tabla_tbody tr,td{
+    vertical-align: middle;
+}

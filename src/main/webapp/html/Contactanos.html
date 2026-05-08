@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos | Fausta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/EncabezadoY_PieDePagina.css">
+</head>
+<body>
+    <header>
+        <div class="encabezado-contenido">
+            <nav class="encabezado-izquierdo">
+                <a href="Categoria.html"><button class="boton-enc">Tienda</button></a>
+                <a href="Nosotros.html"><button class="boton-enc">Nosotros</button></a>
+            </nav>
+        
+           <div class="encabezado-central">
+                <a href="PaginaPrincipal.html">
+                    <img class="imgEncabezado" src="../img/logoEmpresa.jpg">   
+                </a> 
+           </div>
+           
+            <nav class="encabezado-derecho">
+                <a href="Contactanos.html"><button class="boton-enc">Contactanos</button></a>
+                <a onclick="mostrarLogin()">
+                    <button class="boton-sesion"><img src="../img/logo_sesion.png" alt="logo" class="logo-sesion"><p>Iniciar Sesion</p></button>
+                </a>
+            </nav>
+        </div>
+    </header>
+    <div class="fondoOscuro" style="display: none"></div>
+<main>
+    <div class="formulario-login login" style="display: none;"> <!--display: none es para ocultar el contenido-->
+            <p><strong>Iniciar sesión</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form action="">
+                    <p>Correo:<input type="email" name="correo" id="correo-InicioSesion" placeholder="Ingrese su correo" autofocus></p>
+                    <p>Contraseña:<input type="password" name="contraseña" id="contraseña-InicioSesion" placeholder="Ingrese su contraseña"><p>
+                    <a class="botonRegistrarse">¿Aún no tienes una cuenta? Registrate aqui</a> 
+                    <p><input type="submit" value="Enviar" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>
+        <div class="formulario-login registroFormulario" style="display: none;">
+            <p><strong>Crear una cuenta</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form method="POST" class="registro">
+                    <p>Nombres:<input type="text" name="nombres" id="nombre-CrearCuenta" placeholder="Ingrese sus nombres" autofocus></p>
+                    <p>Apellidos:<input type="text" name="apellidos" id="apellidos-CrearCuenta" placeholder="Ingrese sus apellidos"></p>
+                    <p>Correo:<input type="email" name="email" id="correo-CrearCuenta" placeholder="Ingrese su correo"></p>
+                    <p>Contraseña:<input type="password" name="contrasena" id="contraseña-CrearCuenta" placeholder="Ingrese su contraseña"></p>
+                    <p>Telefono: <input type="tel" name="telefono" id="telefono-CrearCuenta" maxlength="9" placeholder="Ingrese su número de telefono"></p>
+                    <p>Dni: <input type="text" name="dni" id="dni-CrearCuenta" placeholder="Ingrese su dni" maxlength="8"></p>
+                    <p>Ciudad:
+                        <select name="id_ciudad" id="ciudad_CrearCuenta" required>
+                            <option value="">Seleccione una ciudad</option>
+                        </select>
+                    </p> 
+                    <p class="boton-enviar"><input type="submit" value="Crear cuenta" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>    
+    <div class="container mt-5 mb-5">
+    <div class="row">
+    
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2 class="mb-3">Contáctanos</h2>
+        <p class="text-muted">
+            Si tienes dudas sobre nuestros productos, estamos aquí para ayudarte.  
+            Completa el formulario y te responderemos lo antes posible.
+        </p>
+            <img src="../img/img_contacto.jpeg" class="img-fluid mt-5 mb-5 rounded" alt="trabajadoras fausta">
+        </div>
+
+   
+        <div class="col-md-6 d-flex justify-content-center">
+        <div class="card p-4 shadow-lg" style="width: 30rem;">
+            <h3 class="text-center mb-3">¿Dudas o consultas sobre nuestros productos?</h3>
+            <p class="text-center text-muted mb-4">Nos dedicamos en ayudarte a resolver tus dudas</p>  
+                <form id="form-contacto">
+
+                    <div class="mb-3">
+                        <label for="nombres" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingresa tu nombre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@correo.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="asunto" class="form-label">Asunto</label>
+                        <select class="form-select" id="asunto" name="asunto" required>
+                            <option value="" selected disabled>Selecciona un asunto</option>
+                            <option value="Reclamo">Reclamo</option>
+                            <option value="Consulta de producto">Consulta de producto</option>
+                            <option value="Problema con pago">Problema con pago</option>
+                            <option value="Sugerencia">Sugerencia</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="motivo" class="form-label">Motivo</label>
+                        <textarea class="form-control" id="motivo" name="motivo" rows="4" placeholder="Escribe aquí tu consulta o mensaje"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>   
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3>Siguenos</h3><br>
+                <a href="https://www.instagram.com/faustapasteleria" target="_blank"><img src="../img/logoInstagram.png"></a>
+                <a href="https://www.youtube.com/@faustapasteleria7276" target="_blank"><img src="../img/logoYouTube.png"></a>
+                <a href="https://www.facebook.com/fausta.pasteleria" target="_blank"><img src="../img/logofacebook.png"></a>
+                <a href="https://www.tiktok.com/@faustapasteleria" target="_blank"><img src="../img/logotiktok.png"></a>
+            </div>
+            <div class="footer-columna mt-2">
+                <h3>Centro de contactos</h3>
+                <p>+51 989 496 359</p>
+                <p>pedidos@faustapasteleria.com</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Horario de atencion</h3>
+                <p>Lunes a sabado: 10:00am - 19:00pm</p>
+                <p>Domingo: 11:00am - 18:00pm</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Ubicacion</h3>
+                <p>Jr. Pedro Conde 472, Lince</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/CuentaUsuario.js"></script>
+    <script src="../js/Contacto.js"></script>
+</body>
+</html>

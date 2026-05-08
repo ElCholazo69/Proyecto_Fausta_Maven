@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+main{
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+#contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    grid-auto-rows: auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.producto{
+    text-align: center;
+    border: 2px solid #D9D9D9;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+}
+
+.texto-producto{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "Precio1  Precio2  Precio3";
+    gap: 5px;
+    width: 100%;
+}
+
+.descripcion{
+    margin: 0;
+    font-size: 1em;
+}
+
+.precio1{
+    grid-area: Precio1;
+}
+
+.precio2{
+    grid-area: Precio2;
+}
+
+.precio3{
+    grid-area: Precio3;
+}
+
+.precio1, .precio2, .precio3{
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.74em;
+}
+
+.producto img{
+    width: 100%;
+    height: 90%;
+}
+
+/*Carrito*/
+.carritoBoton{
+    cursor: pointer;
+}
+
+.carrito * {
+    margin: 0;
+}
+.carrito{
+    background-color: white;
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1.1vw;
+    gap: 5px;
+}
+
+.productosCarrito{
+    overflow-y: scroll;
+    min-height: 60%;
+}
+
+.carrito-producto{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 5vh);
+    grid-template-areas: "imagen nombre nombre nombre cerrar"
+                         "imagen descripcion descripcion descripcion cerrar"
+                         "imagen cantidad . precio cerrar";
+    padding: 10px;
+    gap: 10px;
+}
+
+.imagen-carrito{
+    grid-area: imagen;
+    max-height: 100%;
+    max-width: 100%;
+    justify-self: center;
+}
+.nombre-carrito{
+    grid-area: nombre;
+}
+.descripcion-carrito{
+    grid-area: descripcion;
+}
+.carritoCantidad{
+    grid-area: cantidad;
+}
+.precio-carrito{
+    grid-area: precio;
+}
+.cerrar{
+    grid-area: cerrar;
+    align-self: center;
+    width: 50%;
+    height: 100%;
+    margin-left: 40px;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.cerrar:hover{
+    background-color: #DD3B24;
+}
+
+.carritoCantidad button,input{
+    max-height: 1.7em;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.subtotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrito h4{
+    margin: 10px;
+}
+
+.carritoB button{
+    width: 100%; 
+}
+
+#seleccionPrecio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 60%;
+    height: 60%;
+    border-radius: 20px;
+}
+
+#seleccionPrecio div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+}
+
+#seleccionPrecio button{
+    width: 25%;
+    height: 40%;
+}
+
+.precios-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Botón | Agregar al carrito */
+.btn-agregar {
+    background-color: #cc1f1f;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+/*Botones que aparecen al presionar "Agregar al carrito" */
+.opciones-precio {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-precio {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    cursor: pointer;
+}
+
+.btn-precio.active {
+    background-color: #DD3B24;
+    color: white;
+    border-color: #DD3B24;
+}
+
+.contenedor-precios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.etiquetas-tamano {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    font-size: 0.85em;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 5px; 
+}
+
+.precios-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.precios-texto .fila-titulos,
+.precios-texto .fila-precios {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.precios-texto .fila-titulos span {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.precios-texto .fila-precios span {
+    font-weight: bold;
+    font-size: 1em;
+    color: #333;
+}
+
+.tamano-carrito {
+    white-space: nowrap;
+    display: inline-block;
+}

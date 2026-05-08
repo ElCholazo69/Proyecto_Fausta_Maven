@@ -1,0 +1,25 @@
+.listaUsuarios{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.listaUsuarios table{
+    width: 100%;
+    min-height: 50vh;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid brown;
+}
+
+
+table th, td {
+    border: 2px solid brown;
+    padding: 8px;
+}
+
+.caption-top caption{
+    text-align: center;
+}

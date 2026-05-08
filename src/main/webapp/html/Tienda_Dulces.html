@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Fausta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/EncabezadoY_PieDePagina.css">
+    <link rel="stylesheet" href="../css/Tienda.css">
+</head>
+<body>
+    <header>
+        <div class="encabezado-contenido">
+            <nav class="encabezado-izquierdo">
+                <a href="Categoria.html"><button class="boton-enc">Tienda</button></a>
+                <a href="Nosotros.html"><button class="boton-enc">Nosotros</button></a>
+            </nav>
+        
+           <div class="encabezado-central">
+                <a href="PaginaPrincipal.html">
+                    <img class="imgEncabezado" src="../img/logoEmpresa.jpg">   
+                </a> 
+           </div>
+           
+            <nav class="encabezado-derecho">
+                <a href="Contactanos.html"><button class="boton-enc">Contactanos</button></a>
+                <a onclick="mostrarLogin()">
+                    <button class="boton-sesion"><img src="../img/logo_sesion.png" alt="logo" class="logo-sesion"><p>Iniciar Sesion</p></button>
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="fondoOscuro" style="display: none"></div>
+    <div class="fondoOscuro fondoCarrito" style="display: none"></div>
+
+    <main>
+        <div class="formulario-login login" style="display: none;"> <!--display: none es para ocultar el contenido-->
+            <p><strong>Iniciar sesión</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form action="">
+                    <p>Correo:<input type="email" name="correo" id="correo-InicioSesion" placeholder="Ingrese su correo" autofocus></p>
+                    <p>Contraseña:<input type="password" name="contraseña" id="contraseña-InicioSesion" placeholder="Ingrese su contraseña"><p>
+                    <a class="botonRegistrarse">¿Aún no tienes una cuenta? Registrate aqui</a> 
+                    <p><input type="submit" value="Enviar" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>
+        <div class="formulario-login registroFormulario" style="display: none;">
+            <p><strong>Crear una cuenta</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form method="POST" class="registro">
+                    <p>Nombres:<input type="text" name="nombres" id="nombre-CrearCuenta" placeholder="Ingrese sus nombres" autofocus></p>
+                    <p>Apellidos:<input type="text" name="apellidos" id="apellidos-CrearCuenta" placeholder="Ingrese sus apellidos"></p>
+                    <p>Correo:<input type="email" name="email" id="correo-CrearCuenta" placeholder="Ingrese su correo"></p>
+                    <p>Contraseña:<input type="password" name="contrasena" id="contraseña-CrearCuenta" placeholder="Ingrese su contraseña"></p>
+                    <p>Telefono: <input type="tel" name="telefono" id="telefono-CrearCuenta" maxlength="9" placeholder="Ingrese su número de telefono"></p>
+                    <p>Dni: <input type="text" name="dni" id="dni-CrearCuenta" placeholder="Ingrese su dni" maxlength="8"></p>
+                    <p>Ciudad:
+                        <select name="id_ciudad" id="ciudad_CrearCuenta" required>
+                            <option value="">Seleccione una ciudad</option>
+                        </select>
+                    </p> 
+                    <p class="boton-enviar"><input type="submit" value="Crear cuenta" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand position-relative carritoBoton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" 
+                        class="bi bi-cart" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 
+                        .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l
+                        1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 
+                        0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                    <span id="cantidad_carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 52%">
+                        0
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="Tienda_Tortas.html">Tortas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Tienda_Galletones.html">Galletones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Tienda_Bocaditos.html">Bocaditos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Tienda_Dulces.html">Dulces</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="carrito" style="display: none;">
+                <h4>Carrito de compras</h4>
+                <hr>
+                <div class="productosCarrito">
+                    
+                </div>
+                <hr>
+                <div class="subtotal">
+                    <h4>Subtotal:</h4>
+                    <p class="subtotal-carrito"></p>
+                </div>
+                <a href="../html/Carrito.html" class="carritoB"><button type="button" class="btn btn-danger">Finalizar compra</button></a>
+            </div>
+        </nav>
+        <hr>
+
+        <div class="contenedor" id="contenedor-productos"></div>
+        
+    </main>
+    
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3>Siguenos</h3><br>
+                <a href="https://www.instagram.com/faustapasteleria" target="_blank"><img src="../img/logoInstagram.png"></a>
+                <a href="https://www.youtube.com/@faustapasteleria7276" target="_blank"><img src="../img/logoYouTube.png"></a>
+                <a href="https://www.facebook.com/fausta.pasteleria" target="_blank"><img src="../img/logofacebook.png"></a>
+                <a href="https://www.tiktok.com/@faustapasteleria" target="_blank"><img src="../img/logotiktok.png"></a>
+            </div>
+            <div class="footer-columna">
+                <h3>Centro de contactos</h3>
+                <p>+51 989 496 359</p>
+                <p>pedidos@faustapasteleria.com</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Horario de atencion</h3>
+                <p>Lunes a sabado: 10:00am - 19:00pm</p>
+                <p>Domingo: 11:00am - 18:00pm</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Ubicacion</h3>
+                <p>Jr. Pedro Conde 472, Lince</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/CuentaUsuario.js"></script>
+    <script src="../js/productos.js"></script>
+    <script src="../js/Carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

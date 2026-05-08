@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Fausta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/SobreEmpresa.css">
+    <link rel="stylesheet" href="../css/EncabezadoY_PieDePagina.css">
+</head>
+<body>
+    <header>
+        <div class="encabezado-contenido">
+            <nav class="encabezado-izquierdo">
+                <a href="Categoria.html"><button class="boton-enc">Tienda</button></a>
+                <a href="Nosotros.html"><button class="boton-enc">Nosotros</button></a>
+            </nav>
+        
+           <div class="encabezado-central">
+                <a href="PaginaPrincipal.html">
+                    <img class="imgEncabezado" src="../img/logoEmpresa.jpg">   
+                </a> 
+           </div>
+           
+            <nav class="encabezado-derecho">
+                <a href="Contactanos.html"><button class="boton-enc">Contactanos</button></a>
+                <a onclick="mostrarLogin()">
+                    <button class="boton-sesion"><img src="../img/logo_sesion.png" alt="logo" class="logo-sesion"><p>Iniciar Sesion</p></button>
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="fondoOscuro" style="display: none"></div>
+
+    <main class="contenedor-principal">
+        <div class="formulario-login login" style="display: none;"> <!--display: none es para ocultar el contenido-->
+            <p><strong>Iniciar sesión</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form action="">
+                    <p>Correo:<input type="email" name="correo" id="correo-InicioSesion" placeholder="Ingrese su correo" autofocus></p>
+                    <p>Contraseña:<input type="password" name="contraseña" id="contraseña-InicioSesion" placeholder="Ingrese su contraseña"><p>
+                    <a class="botonRegistrarse">¿Aún no tienes una cuenta? Registrate aqui</a> 
+                    <p><input type="submit" value="Enviar" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>
+        <div class="formulario-login registroFormulario" style="display: none;">
+            <p><strong>Crear una cuenta</strong></p>
+            <p class="rellenar">Rellenar los datos</p>
+            <div class="preguntas-InicioSesion">
+                <form method="POST" class="registro">
+                    <p>Nombres:<input type="text" name="nombres" id="nombre-CrearCuenta" placeholder="Ingrese sus nombres" autofocus></p>
+                    <p>Apellidos:<input type="text" name="apellidos" id="apellidos-CrearCuenta" placeholder="Ingrese sus apellidos"></p>
+                    <p>Correo:<input type="email" name="email" id="correo-CrearCuenta" placeholder="Ingrese su correo"></p>
+                    <p>Contraseña:<input type="password" name="contrasena" id="contraseña-CrearCuenta" placeholder="Ingrese su contraseña"></p>
+                    <p>Telefono: <input type="tel" name="telefono" id="telefono-CrearCuenta" maxlength="9" placeholder="Ingrese su número de telefono"></p>
+                    <p>Dni: <input type="text" name="dni" id="dni-CrearCuenta" placeholder="Ingrese su dni" maxlength="8"></p>
+                    <p>Ciudad:
+                        <select name="id_ciudad" id="ciudad_CrearCuenta" required>
+                            <option value="">Seleccione una ciudad</option>
+                        </select>
+                    </p> 
+                    <p class="boton-enviar"><input type="submit" value="Crear cuenta" class="btnEnviar"></p>
+                </form>
+            </div>
+        </div>
+        <div class="columna-izquierda">
+            <h1>Información de la empresa</h1>
+                <div class="informacion">
+                    <h2>Misión</h2>
+                    <p> La misión de Fausta Pastelería es rescatar y celebrar la pastelería tradicional peruana, ofreciendo 
+                        productos de calidad inspirados en recetas antiguas.</p>
+                </div>
+                <div class="informacion">
+                    <h2>Visión</h2>
+                    <p>Su visión es compartir la esencia del Perú en cada bocado, a través de dulces que evocan la historia y el legado familiar.</p>
+                </div>
+                <div class="informacion">
+                    <h2>Sobre nosotros</h2>
+                    <p> Fausta Pastelería es una empresa dedicada a la elaboración y venta de productos de repostería artesanal, caracterizada 
+                        por ofrecer postres, tortas, bocaditos de la más alta calidad. Además, Fausta Pastelería Peruana, son una pastelería 
+                        tradicional, muy orgullosas de llevar en alto.</p>
+                </div>
+                <div class="informacion">
+                    <h2>Compromisos</h2>
+                    <ul>
+                        <li>Calidad</li>
+                        <li>Cliente</li>
+                        <li>Innovación</li>
+                        <li>Sostenebilidad</li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="columna-derecha">
+            <img src="../img/tiendaReal.jpg" alt="Tienda de Fausta pasteleria">
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3>Siguenos</h3><br>
+                <a href="https://www.instagram.com/faustapasteleria" target="_blank"><img src="../img/logoInstagram.png"></a>
+                <a href="https://www.youtube.com/@faustapasteleria7276" target="_blank"><img src="../img/logoYouTube.png"></a>
+                <a href="https://www.facebook.com/fausta.pasteleria" target="_blank"><img src="../img/logofacebook.png"></a>
+                <a href="https://www.tiktok.com/@faustapasteleria" target="_blank"><img src="../img/logotiktok.png"></a>
+            </div>
+            <div class="footer-columna mt-2">
+                <h3>Centro de contactos</h3>
+                <p>+51 989 496 359</p>
+                <p>pedidos@faustapasteleria.com</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Horario de atencion</h3>
+                <p>Lunes a sabado: 10:00am - 19:00pm</p>
+                <p>Domingo: 11:00am - 18:00pm</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Ubicacion</h3>
+                <p>Jr. Pedro Conde 472, Lince</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/CuentaUsuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

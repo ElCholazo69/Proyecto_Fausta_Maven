@@ -1,0 +1,33 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main {
+    padding: 40px 0;
+    width: 90%;
+    margin: auto;
+}
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.form-container {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+.table-container {
+    margin-top: 20px;
+}
+img.producto-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+      border-radius: 8px;
+}
