@@ -59,7 +59,7 @@
         formData.append("dni", dni);
         formData.append("id_ciudad",ciudad);
         
-        fetch("/Proyecto_Fausta_Maven/registroCliente", {
+        fetch("/registroCliente", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -88,7 +88,7 @@
         formData.append("email", identificador);
         formData.append("contrasena", contrasena);
 
-        fetch("/Proyecto_Fausta_Maven/login", {
+        fetch("/login", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: formData.toString()
@@ -242,7 +242,7 @@
     
     // === Cargar lista de ciudades para el registro ===/
     function cargarCiudades(){
-        fetch("/Proyecto_Fausta_Maven/ListarCiudades")
+        fetch("/ListarCiudades")
                 .then(response =>response.json())
                 .then(data =>{
                     

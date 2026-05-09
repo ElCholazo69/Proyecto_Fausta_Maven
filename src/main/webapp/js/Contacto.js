@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("motivo", motivo);
 
         try {
-            const response = await fetch("/Proyecto_Fausta_Maven/consulta", {
+            const response = await fetch("/consulta", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: formData.toString()

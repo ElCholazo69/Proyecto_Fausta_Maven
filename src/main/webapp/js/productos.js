@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Llamar al servlet para obtener los productos
-    fetch("/Proyecto_Fausta_Maven/productoCRUD", {
+    fetch("/productoCRUD", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: "accion=listarJson"

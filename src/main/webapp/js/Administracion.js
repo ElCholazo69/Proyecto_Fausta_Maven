@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function cargarUsuarios() {
-    fetch("/Proyecto_Fausta_Maven/listarClientes")
+    fetch("/listarClientes")
         .then(response => response.json())
         .then(data => {
             const tabla = document.getElementById("Usuarios");

@@ -1,4 +1,4 @@
-const URL = "/Proyecto_Fausta_Maven/productoCRUD";
+const URL = "/productoCRUD";
 
     function mostrarFormulario(tipo) {
       document.querySelectorAll(".form-container").forEach(f => f.style.display = "none");

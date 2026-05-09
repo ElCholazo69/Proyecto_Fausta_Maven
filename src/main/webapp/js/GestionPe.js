@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function cargarPedidos() {
-    fetch("/Proyecto_Fausta_Maven/GestionPedido")
+    fetch("/GestionPedido")
         .then(response => response.json())
         .then(data => {
             const tbody = document.getElementById("listaPedidos");
@@ -37,7 +37,7 @@ function cargarPedidos() {
 }
 
 function cambiarEstado(idPedido, nuevoEstado) {
-    fetch("/Proyecto_Fausta_Maven/GestionPedido", {
+    fetch("/GestionPedido", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `accion=actualizarEstado&id_pedido=${idPedido}&estado=${nuevoEstado}`
@@ -56,7 +56,7 @@ function cambiarEstado(idPedido, nuevoEstado) {
 function eliminarPedido(idPedido) {
     if (!confirm("¿Deseas eliminar este pedido?")) return;
 
-    fetch("/Proyecto_Fausta_Maven/GestionPedido", {
+    fetch("/GestionPedido", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: `accion=eliminar&id_pedido=${idPedido}`

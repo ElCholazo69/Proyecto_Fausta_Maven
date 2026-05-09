@@ -538,7 +538,7 @@ formPago.addEventListener("submit", (e) => {
     formData.append("totalProductos", carrito.length);
 
     //Enviar
-    fetch("/Proyecto_Fausta_Maven/hacerPedido", {
+    fetch("/hacerPedido", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"

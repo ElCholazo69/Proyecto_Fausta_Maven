@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const contenedor = document.getElementById("contenedor-consultas");
 
     try {
-        const response = await fetch("/Proyecto_Fausta_Maven/ListarConsultas");
+        const response = await fetch("/ListarConsultas");
         if (!response.ok) throw new Error("No se pudo obtener las consultas");
 
         const consultas = await response.json();

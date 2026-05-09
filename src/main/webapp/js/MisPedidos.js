@@ -23,7 +23,7 @@ function cargarPedidos() {
 
     const idCliente = usuario.id;
 
-    fetch(`/Proyecto_Fausta_Maven/ListarPedidos?idCliente=${idCliente}`)
+    fetch(`/ListarPedidos?idCliente=${idCliente}`)
         .then(res => {
             if (!res.ok) throw new Error("Respuesta no OK: " + res.status);
             return res.json();
@@ -186,7 +186,7 @@ function mostrarPedidos(lista) {
 
 // Descargar PDF usando el id del pedido
 function descargarPDF(idPedido) {
-    window.open(`/Proyecto_Fausta_Maven/GenerarBoleta?idPedido=${idPedido}`, '_blank');
+    window.open(`/GenerarBoleta?idPedido=${idPedido}`, '_blank');
 }
 
 // Mostrar/ocultar detalles

@@ -159,7 +159,7 @@ document.getElementById("btnGuardar").addEventListener("click", () => {
     formData.append("dni", dni);
     formData.append("id_ciudad", id_ciudad);
 
-    fetch("/Proyecto_Fausta_Maven/PerfilUsuario", {
+    fetch("/PerfilUsuario", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString()
