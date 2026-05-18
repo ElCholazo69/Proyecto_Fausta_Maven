@@ -35,7 +35,7 @@ public class ConexionBD {
                 CLAVE
             );
         } catch(Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
 
         return cnn;
@@ -48,7 +48,7 @@ public class ConexionBD {
                 cnn.close();
             }
         } catch(Exception e) {
-            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
     } 
 }
