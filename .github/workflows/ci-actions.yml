@@ -1,28 +1,31 @@
-name: CD - Despliegue de la Interfaz
+name: CI - Control de Calidad de la Pasteleria
 
 on:
   push:
     branches: [ "master" ]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  despliegue-frontend:
+  control-calidad:
     runs-on: ubuntu-latest
+
     steps:
     - name: Descargar codigo del repositorio
       uses: actions/checkout@v4
 
-    - name: Inicializar entorno de GitHub Pages
-      uses: actions/configure-pages@v4
-
-    - name: Empaquetar archivos de la interfaz
-      uses: actions/upload-pages-artifact@v3
+    # CI-01 (Parte A): Validador exclusivo de HTML
+    - name: CI-01 - Validar estructura y etiquetas HTML
+      uses: htmlhint/action-htmlhint@v1
       with:
-        path: 'src/main/webapp/'
+        files: 'src/main/webapp/html/**/*.html'
 
-    - name: CD-03 - Publicar Frontend en GitHub Pages
-      uses: actions/deploy-pages@v4
+    # CI-01 (Parte B): Validador exclusivo de CSS instalado en milisegundos en la máquina virtual
+    - name: CI-01 - Validar hojas de estilo CSS
+      run: |
+        sudo npm install -g csslint
+        csslint src/main/webapp/css/*.css
+
+    # CI-02: Comando ls corregido y seguro para la consola de Linux
+    - name: CI-02 - Verificar presencia de archivos JavaScript
+      run: |
+        echo "Analizando la interactividad del Frontend..."
+        ls src/main/webapp/js
