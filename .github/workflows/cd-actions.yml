@@ -1,0 +1,31 @@
+name: CI - Control de Calidad de la Pasteleria
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  control-calidad:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    # CI-01 (Parte A): Validador exclusivo de HTML
+    - name: CI-01 - Validar estructura y etiquetas HTML
+      uses: htmlhint/htmlhint-action@v2
+      with:
+        bundle-path: 'src/main/webapp/html/**/*.html'
+
+    # CI-01 (Parte B): Validador exclusivo de CSS instalado en milisegundos en la máquina virtual
+    - name: CI-01 - Validar hojas de estilo CSS
+      run: |
+        sudo npm install -g csslint
+        csslint src/main/webapp/css/*.css
+
+    # CI-02: Comando ls corregido y seguro para la consola de Linux
+    - name: CI-02 - Verificar presencia de archivos JavaScript
+      run: |
+        echo "Analizando la interactividad del Frontend..."
+        ls src/main/webapp/js

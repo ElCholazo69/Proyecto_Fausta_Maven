@@ -1,0 +1,28 @@
+name: CD - Despliegue de la Interfaz
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  despliegue-frontend:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    - name: Inicializar entorno de GitHub Pages
+      uses: actions/configure-pages@v4
+
+    - name: Empaquetar archivos de la interfaz
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'src/main/webapp/'
+
+    - name: CD-03 - Publicar Frontend en GitHub Pages
+      uses: actions/deploy-pages@v4
