@@ -12,19 +12,19 @@ jobs:
     - name: Descargar codigo del repositorio
       uses: actions/checkout@v4
 
-    # CI-01 (Parte A): Validador exclusivo de HTML
+    # CI-01 (Parte A): Validador nativo de HTML instalado vía npm
     - name: CI-01 - Validar estructura y etiquetas HTML
-      uses: htmlhint/action-htmlhint@v1
-      with:
-        files: 'src/main/webapp/html/**/*.html'
+      run: |
+        sudo npm install -g htmlhint
+        htmlhint "src/main/webapp/html/**/*.html"
 
-    # CI-01 (Parte B): Validador exclusivo de CSS instalado en milisegundos en la máquina virtual
+    # CI-01 (Parte B): Validador exclusivo de CSS listo e independiente
     - name: CI-01 - Validar hojas de estilo CSS
       run: |
         sudo npm install -g csslint
-        csslint src/main/webapp/css/*.css
+        csslint "src/main/webapp/css/*.css"
 
-    # CI-02: Comando ls corregido y seguro para la consola de Linux
+    # CI-02: Comando seguro para verificar presencia de JavaScript
     - name: CI-02 - Verificar presencia de archivos JavaScript
       run: |
         echo "Analizando la interactividad del Frontend..."

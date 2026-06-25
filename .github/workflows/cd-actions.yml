@@ -12,7 +12,13 @@ permissions:
 jobs:
   despliegue-frontend:
     runs-on: ubuntu-latest
-    steps:
+    
+    # NECESARIO PARA EL DESPLIEGUE EN GITHUB PAGES
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps: # Los pasos siguen aquí abajo exactamente igual que antes
     - name: Descargar codigo del repositorio
       uses: actions/checkout@v4
 
@@ -25,4 +31,5 @@ jobs:
         path: 'src/main/webapp/'
 
     - name: CD-03 - Publicar Frontend en GitHub Pages
+      id: deployment
       uses: actions/deploy-pages@v4
