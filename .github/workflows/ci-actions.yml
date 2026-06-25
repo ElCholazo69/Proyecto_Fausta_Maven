@@ -19,10 +19,16 @@ jobs:
         htmlhint "src/main/webapp/html/**/*.html"
 
     # CI-01 (Parte B): Validador exclusivo de CSS listo e independiente
-    - name: CI-01 - Validar hojas de estilo CSS
+    - name: CI-01 - Validar hojas de estilo CSS con Stylelint
       run: |
-        sudo npm install -g csslint
-        csslint "src/main/webapp/css/*.css"
+        # 1. Instalamos las dependencias necesarias de forma local
+        npm install stylelint stylelint-config-standard --save-dev
+        
+        # 2. Creamos un archivo de configuración temporal para indicarle a Stylelint que use la guía estándar
+        echo '{"extends": "stylelint-config-standard"}' > .stylelintrc.json
+        
+        # 3. Ejecutamos Stylelint sobre tus archivos CSS
+        npx stylelint "src/main/webapp/css/**/*.css"
 
     # CI-02: Comando seguro para verificar presencia de JavaScript
     - name: CI-02 - Verificar presencia de archivos JavaScript
