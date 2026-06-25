@@ -2,7 +2,7 @@ name: CD - Despliegue de la Interfaz
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 permissions:
   contents: read
