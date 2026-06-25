@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+  
 jobs:
   despliegue-frontend:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    steps: # Los pasos siguen aquí abajo exactamente igual que antes
+    steps: # Los pasos siguen aquí abajo 
     - name: Descargar codigo del repositorio
       uses: actions/checkout@v4
 
