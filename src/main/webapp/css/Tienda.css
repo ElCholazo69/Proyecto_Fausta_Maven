@@ -192,9 +192,10 @@ main{
 
 .precios-texto {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 35px;
+    width:100%;
+    gap: 5px;
     font-weight: bold;
     font-size: 0.9em;
     color: #333;
@@ -251,14 +252,6 @@ main{
     color: #666;
     font-weight: 600;
     margin-bottom: 5px; 
-}
-
-.precios-texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 5px;
 }
 
 .precios-texto .fila-titulos,

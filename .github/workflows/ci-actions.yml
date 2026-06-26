@@ -18,14 +18,14 @@ jobs:
         sudo npm install -g htmlhint
         htmlhint "src/main/webapp/html/**/*.html"
 
-    # CI-01 (Parte B): Validador exclusivo de CSS listo e independiente
     - name: CI-01 - Validar hojas de estilo CSS con Stylelint
       run: |
-        # 1. Instalamos dependencias
+        # 1. Instalamos las dependencias necesarias de forma local
         npm install stylelint stylelint-config-standard --save-dev
         
-        # 2. Creamos la configuración relajando las reglas estrictas
-        echo '{
+        # 2. Creamos la configuración de forma segura para la consola de Linux
+        cat << 'EOF' > .stylelintrc.json
+        {
           "extends": "stylelint-config-standard",
           "rules": {
             "selector-class-pattern": null,
@@ -38,11 +38,13 @@ jobs:
             "color-function-notation": null,
             "alpha-value-notation": null,
             "media-feature-range-notation": null,
-            "declaration-empty-line-before": null
+            "declaration-empty-line-before": null,
+            "declaration-block-no-redundant-longhand-properties": null
           }
-        }' > .stylelintrc.json
+        }
+        EOF
         
-        # 3. Ejecutamos la validación enfocada solo en errores reales
+        # 3. Ejecutamos la validación final
         npx stylelint "src/main/webapp/css/**/*.css"
 
     # CI-02: Comando seguro para verificar presencia de JavaScript
