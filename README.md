@@ -45,8 +45,6 @@ CREATE DATABASE panaderiafausta;
 2. Importar el archivo **`script_fausta.sql`**, ubicado en la raíz del proyecto, el cual contiene la estructura completa de la base de datos, incluyendo las tablas, relaciones, restricciones, datos iniciales y procedimientos almacenados necesarios para el funcionamiento de la aplicación.
 
 ### Paso 3: Configurar la conexión
-
-### 3. Configurar conexión
 Modificar las credenciales de conexión a la base de datos en la clase correspondiente, indicando el nombre de la base de datos, el usuario y la contraseña de MySQL según la configuración del entorno.
 
 **Configuración manual de rutas JavaScript para desarrollo local:** 
