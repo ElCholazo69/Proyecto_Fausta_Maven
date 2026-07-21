@@ -46,9 +46,24 @@ CREATE DATABASE panaderiafausta;
 
 ### Paso 3: Configurar la conexión
 
+### 3. Configurar conexión
 Modificar las credenciales de conexión a la base de datos en la clase correspondiente, indicando el nombre de la base de datos, el usuario y la contraseña de MySQL según la configuración del entorno.
 
-### Paso 4: Ejecutar el proyecto
+**Configuración manual de rutas JavaScript para desarrollo local:** 
+   El código en el repositorio está configurado por defecto para producción en **Render** usando rutas absolutas desde la raíz (ej. `/registroCliente`). Para poder probar y ejecutar el proyecto en tu entorno local (`localhost`), debes modificar temporalmente las URLs de las peticiones `fetch`:
+   
+   * Abre los archivos JavaScript y pon el servidor local que es **Apache Tomcat** junto con el nombre del proyecto a cada ruta.
+   
+   **Ejemplo de cambio requerido para Localhost:**
+   ```javascript
+   // Código original en el repositorio (Modo Render):
+   fetch("/registroCliente", { ... })
+
+   // Cambio manual que debes aplicar (Modo Localhost):
+   fetch("http://localhost:8080/Proyecto_Fausta_Maven/registroCliente", { ... })
+   ```
+
+### Paso 4: Ejecutar el proyecto en LocalHost
 
 1. Abrir el proyecto en Apache NetBeans.
 2. Configurar Apache Tomcat como servidor de aplicaciones.
